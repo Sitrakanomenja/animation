@@ -1,0 +1,239 @@
+
+.container{
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* _______________________item-1________________________________ */
+.item-1{
+     width: 500px;
+    height: 300px;
+    background: yellow;
+}
+.item1{
+    height: 200px;
+    width: 20px;
+    
+    background: red;
+    position: static;
+    animation: rotation 2s linear infinite;
+}
+@keyframes rotation {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+/* ____________________________item-2____________________________ */
+.item-2{
+    width: 500px;
+   height: 300px;
+   background: rgb(139, 156, 112);
+}
+.item2{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: red;
+    position: relative;
+    animation-name: tour;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes tour {
+    0%   {background-color:red; left:0px; top:50px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:400px; top:50px;}
+    75%  {background-color:green; left:200px; top:200px;}
+    100% {background-color:red; left:0px; top:50px;}
+  }
+/* ________________________item-3_________________________________________ */
+.item-3{
+    width: 500px;
+   height: 300px;
+}
+.item33{
+    height:20px;
+    width:60%;
+    top: 100px;
+    background:transparent;
+    position: relative;
+    border: 5px solide black;
+    animation: progress 4s infinite;
+}
+@keyframes progress {
+    0%{width: 10px; opacity: 0%;}
+    25%{width: 50px;background: violet; opacity: 25%;}
+    50%{width: 75px;background: blue;opacity: 50%;}
+    75%{width: 80px;background: brown;opacity: 75%;}
+}
+.item3{
+    height:20px;
+    width:50%;
+    top: 100px;
+    padding-left: 200px;
+    background:transparent;
+    position: relative;
+    border: 5px solide black;
+    animation: progress 4s infinite;
+    animation-direction: reverse;
+}
+@keyframes progress {
+    0%{width: 10px; opacity: 0%;}
+    25%{width: 50px;background: violet; opacity: 25%;}
+    50%{width: 75px;background: blue;opacity: 50%;}
+    75%{width: 80px;background: brown;opacity: 75%;}
+}
+
+
+/* ____________________________item-4_____________________________________________ */
+.item-4{
+    width: 500px;
+   height: 300px;
+   background: black;
+}
+.item4{
+    margin: 50px 0px 0px 150px;
+    height: 200px;
+    width: 200px;
+    background:coral;
+    animation: square-to-circle 2s infinite alternate;
+}
+@keyframes square-to-circle {
+    0% {
+        border-radius: 0;
+        background: coral;
+    }
+    25%{
+        border-radius: 10%;
+        background: darksalmon;
+    }
+    50%{
+        border-radius: 25%;
+        background: indianred;
+    }
+    75%{
+        border-radius: 40%;
+        background: lightcoral;
+    }
+    100% {border-radius: 50%;
+        background: darkorange;
+    }
+}
+/* _______________________________item-5_________________________________________ */
+.item-5{
+    width: 500px;
+   height: 300px;
+   background:black;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.ring{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: -30px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid rgb(0, 247, 255);
+    animation: animate 2s ease infinite;
+}
+@keyframes animate{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+.ring::before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(0, 247, 255);
+    box-shadow: 3px 2px 4px 5px rgb(50, 160, 114);
+}
+.ring:nth-child(2){
+    animation: animate2 2s ease infinite;
+    
+}
+.ring:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgb(0, 247, 255);
+    box-shadow: 3px 2px 4px 5px rgb(50, 160, 114);
+}
+@keyframes animate2{
+    0%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg);}
+}
+.ring:nth-child(3){
+    position: absolute;
+    bottom: 100px;
+    
+}
+p{
+    position: absolute;
+    color: aliceblue;
+    letter-spacing: 0.15;
+}
+
+
+/* __________________item-6_______________________________________________ */
+.item-6{
+    width: 500px;
+   height: 300px;
+   background: rgb(255, 0, 170);
+}
+h3{
+    color: rgb(0, 0, 0);
+    font-size: 70px;
+    font-weight: 20px;
+    animation: fade;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes fade {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+/* ________________________responsive__________________________________________ */
+
+
+ @media only screen and (max-width:600px){
+        .item2{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background: red;
+            position: relative;
+            animation-name: tour;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes tour {
+            0%   {background-color:red; left:0px; top:60px;}
+            25%  {background-color:yellow; left:200px; top:0px;}
+            50%  {background-color:blue; left:370px; top:50px;}
+            75%  {background-color:green; left:190px; top:180px;}
+            100% {background-color:red; left:0px; top:50px;}
+          }
+
+    .item3{
+       margin: 50px 0px 0px 70px;
+    }
+    .item4{
+        margin: 50px 0px 0px 135px;
+    }
+  
+   
+} 
+
